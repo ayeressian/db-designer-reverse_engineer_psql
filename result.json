@@ -1,0 +1,1848 @@
+{
+    "tables": [
+      {
+        "name": "addresses",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "location_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "address_line_1",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "address_line_2",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "city",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "state",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "postal_code",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "country",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "time_zone",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "is_same",
+            "type": "boolean",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "attachments",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "procedure_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "s3_key",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "filename",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "content_type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "s3_bucket_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "md5",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "treatment_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "contacts",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "country_code",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "phone_number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "address_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "events",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "event_details",
+            "type": "json",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "whodunnit",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "target_model_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "target_model_id_number",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "infusion_stages",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "treatment_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "estimated_infusion_date",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "order_type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "institution_qualifications",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "qualification_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "disqualified_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "items",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "product",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "item_number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "procedure_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "shipment_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "label_scan_values",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "coi",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "value",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "deleted_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "labels",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "product",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "procedure",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "step",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "format",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "old_passwords",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "encrypted_password",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "password_archivable_type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "password_archivable_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "physicians",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "first_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "last_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "email",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "phone_number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "print_jobs",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "printer_serial_number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "template_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "user_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "label_type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "treatment_id",
+            "type": "integer",
+            "pk": false,
+            "required": false,
+            "fk": {
+              "table": "treatments",
+              "column": "id"
+            }
+          },
+          {
+            "name": "variable_map",
+            "type": "jsonb",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "sibling_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "printers",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "serial_number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "step",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "procedure_steps",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "procedure_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "data",
+            "type": "jsonb",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "completed_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "procedures",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "treatment_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "current_step_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "procedure_status",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "custodian_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "scheduled_for",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "started_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "completed_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "cancelled_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "cancellation_reason",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "last_completed_step",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "product",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "indication",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "status",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "shipment_documents",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "shipment_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "s3_key",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "filename",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "content_type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "s3_bucket_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "md5",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "shipment_statuses",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "request",
+            "type": "text",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "response",
+            "type": "text",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "coi",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "item_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "tracking_id",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "shipments",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "tracking_id",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "delivered_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "picked_up_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "delivery_eta",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "delayed_reason",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "pick_up_eta",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "pick_up_deadline",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "delivery_deadline",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "stop_checking_api",
+            "type": "boolean",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "cancelled_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "treatment_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "from_institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "to_institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "content_type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "sibling_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "is_primary",
+            "type": "boolean",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "shipping_details",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "courier_time",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "instructions",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "address_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "container_default_time",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "container_instructions",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "templates",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "label_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "region",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "language",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "variables_map",
+            "type": "jsonb",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "file",
+            "type": "bytea",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "user_qualifications",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "therapy_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "user_role_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "disqualify_reason",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "disqualified_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "user_roles",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "user_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "users",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "provider",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "uid",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "email",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "encrypted_password",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "sign_in_count",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "current_sign_in_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "last_sign_in_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "current_sign_in_ip",
+            "type": "inet",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "last_sign_in_ip",
+            "type": "inet",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "tokens",
+            "type": "text",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "first_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "last_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "reset_password_token",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "reset_password_sent_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "password_changed_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "tos_accepted_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "marketing_opt_in",
+            "type": "boolean",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "salesforce_credentials",
+            "type": "json",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "google_credentials",
+            "type": "json",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "nps_last_submitted_or_cancelled_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "middle_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "country_code",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "phone_number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "versions",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "item_type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "item_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "event",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "whodunnit",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "object",
+            "type": "jsonb",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "object_changes",
+            "type": "jsonb",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "object_details",
+            "type": "json",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "institutions",
+        "columns": [
+          {
+            "name": "id",
+            "type": "integer",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "users_count",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "default_courier",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "primary_language",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "tissue_establishment_number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "facility_identification_number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "disqualify_reason",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "address_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "time_zone",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "is_active",
+            "type": "boolean",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "country_code",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "institution_type",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "number",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "capacity_registries",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "institution_id",
+            "type": "integer",
+            "pk": false,
+            "required": false,
+            "fk": {
+              "table": "institutions",
+              "column": "id"
+            }
+          },
+          {
+            "name": "range_type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "manufacturing_capacities",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "capacity_date",
+            "type": "date",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "capacity",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "capacity_registry_id",
+            "type": "integer",
+            "pk": false,
+            "required": false,
+            "fk": {
+              "table": "capacity_registries",
+              "column": "id"
+            }
+          }
+        ]
+      },
+      {
+        "name": "treatments",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "coi",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "patient_first_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "patient_middle_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "patient_last_name",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "patient_dob",
+            "type": "date",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "patient_id",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "patient_physician",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "last_completed_step",
+            "type": "smallint",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "cancelled_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "signature_documents",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "location",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "md5",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "type",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "meaning",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "cancelled_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "procedure_step_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "signatures",
+        "columns": [
+          {
+            "name": "id",
+            "type": "bigint",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "user_id",
+            "type": "integer",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "role",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "signature_document_id",
+            "type": "integer",
+            "pk": false,
+            "required": false,
+            "fk": {
+              "table": "signature_documents",
+              "column": "id"
+            }
+          }
+        ]
+      },
+      {
+        "name": "schema_migrations",
+        "columns": [
+          {
+            "name": "version",
+            "type": "character varying",
+            "pk": true,
+            "required": false
+          }
+        ]
+      },
+      {
+        "name": "ar_internal_metadata",
+        "columns": [
+          {
+            "name": "key",
+            "type": "character varying",
+            "pk": true,
+            "required": false
+          },
+          {
+            "name": "value",
+            "type": "character varying",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "created_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          },
+          {
+            "name": "updated_at",
+            "type": "timestamp without time zone",
+            "pk": false,
+            "required": false
+          }
+        ]
+      }
+    ]
+  }
